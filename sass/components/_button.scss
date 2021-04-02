@@ -13,7 +13,7 @@
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
 
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -23,7 +23,7 @@
 
   &:active {
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
   }
 
   &::after {
@@ -50,7 +50,32 @@
 
   &--animated {
     animation: moveInBottom .5s ease-out .75s;
-    /* keep the [0%] attributes before the translation */
+    /* keep the [0%-status] attributes before the translation */
     animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: translateX(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    transform: translateX(-1px);
   }
 }
